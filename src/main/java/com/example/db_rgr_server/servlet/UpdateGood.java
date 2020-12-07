@@ -1,6 +1,7 @@
 package com.example.db_rgr_server.servlet;
 
 import com.example.db_rgr_server.converter.GoodConverter;
+import com.example.db_rgr_server.db.DBProtocol;
 import com.example.db_rgr_server.model.Good;
 
 import javax.servlet.ServletException;
@@ -25,6 +26,9 @@ public class UpdateGood extends HttpServlet {
                 jb.append(line);
         } catch (Exception e) { /*report an error*/ }
         Good good = new GoodConverter().convertFromJson(jb.toString());
+        DBProtocol db = new DBProtocol();
+        db.connect();
+        db.saveGood(good);
         System.out.println("Get good with id" + good.getId());
         PrintWriter out = response.getWriter();
         out.close();
