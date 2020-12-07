@@ -13,6 +13,17 @@
         <servlet-name>MyServlet</servlet-name>
         <url-pattern>/MyServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetGoods</servlet-name>
+        <servlet-class>com.example.db_rgr_server.servlet.GetGoods</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GetGoods</servlet-name>
+        <url-pattern>/get_goods</url-pattern>
+    </servlet-mapping>
+
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>
