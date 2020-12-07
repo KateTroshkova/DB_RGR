@@ -24,6 +24,26 @@
         <url-pattern>/get_goods</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AddGood</servlet-name>
+        <servlet-class>com.example.db_rgr_server.servlet.AddGood</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddGood</servlet-name>
+        <url-pattern>/add_good</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>CorsFilter</filter-name>
+        <filter-class>com.example.db_rgr_server.Filter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>CorsFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>

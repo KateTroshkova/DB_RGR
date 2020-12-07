@@ -6,6 +6,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
+import java.io.IOException;
 import java.util.List;
 
 public class GoodConverter {
@@ -22,5 +23,9 @@ public class GoodConverter {
         JsonObject jsonObject = new JsonObject();
         jsonObject.add("goods", jarray);
         return jsonObject.toString();
+    }
+
+    public Good convertFromJson(String source) {
+        return gson.fromJson(source, Good.class);
     }
 }
