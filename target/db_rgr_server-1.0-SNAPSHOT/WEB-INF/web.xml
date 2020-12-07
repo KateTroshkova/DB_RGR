@@ -34,6 +34,16 @@
         <url-pattern>/add_good</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>UpdateGood</servlet-name>
+        <servlet-class>com.example.db_rgr_server.servlet.UpdateGood</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdateGood</servlet-name>
+        <url-pattern>/update_good</url-pattern>
+    </servlet-mapping>
+
     <filter>
         <filter-name>CorsFilter</filter-name>
         <filter-class>com.example.db_rgr_server.Filter</filter-class>
