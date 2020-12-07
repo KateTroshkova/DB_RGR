@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Unix Time</title>
+    <script>
+      function requestUnixTime() {
+        const resultContainer = document.getElementById('result');
+        resultContainer.innerText = 'Loading...';
+		
+		const Http = new XMLHttpRequest();
+        Http.onreadystatechange = (e) => {
+          resultContainer.innerText = Http.response.toString();
+        }
+		const url='http://localhost:8080/db_rgr_server_war/MyServlet';
+		Http.open("GET", url);
+		Http.send();
+      }
+    </script>
+  </head>
+  <body onload="requestUnixTime();">
+    <h1>Unix Time</h1>
+    <p>Current Unix time: <span id="result"></span></p>
+    <p>(<a href="">Refresh</a>)</p>
+  </body>
+</html>
