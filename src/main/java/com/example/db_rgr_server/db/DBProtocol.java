@@ -18,8 +18,10 @@ public class DBProtocol {
             + "    price INTEGER NOT NULL\n"
             + ");";
 
+    private GoodDao usersDao = new GoodDao();
+
     public void connect() {
-        try {
+        /*try {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(url, user, password);
             System.out.println("Connected to the PostgreSQL server successfully.");
@@ -29,16 +31,17 @@ public class DBProtocol {
             System.out.println(e.getMessage());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     public void saveGood(Good good){
-        try{
+        usersDao.save(good);
+        /*try{
             Statement st = connection.createStatement();
             System.out.println("INSERT INTO goods (id, good_name, price) VALUES ("+good.getId()+",'" + good.getName()+"',"+good.getPrice()+")");
             st.execute("INSERT INTO goods (id, good_name, price) VALUES ("+good.getId()+",'" + good.getName()+"',"+good.getPrice()+")");
             System.out.println("data inserted");
-            /*ResultSet rs = st.executeQuery(query);
+            *//*ResultSet rs = st.executeQuery(query);
 
             if (rs.next()) {
                 // 5. Close all connections
@@ -52,12 +55,12 @@ public class DBProtocol {
             rs.close();
             st.close();
             con.close();
-            return false;*/
+            return false;*//*
         }
         catch (SQLException e) {
             System.out.println(e.toString());
         } catch (Exception e) {
             System.out.println(e.toString());
-        }
+        }*/
     }
 }

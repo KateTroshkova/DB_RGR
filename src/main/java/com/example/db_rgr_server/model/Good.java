@@ -1,26 +1,33 @@
 package com.example.db_rgr_server.model;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
 
+@Entity
+@Table(name="goods")
 public class Good {
 
-    private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false)
+    private int id;
+    @Column(name = "good_name")
     private String name;
+    @Column(name = "price")
     private int price;
 
+    public Good(){
+
+    }
+
     public Good(long id, String name, int price, HashSet<String> keywords) {
-        this.id = id;
         this.name = name;
         this.price = price;
     }
 
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getName() {
