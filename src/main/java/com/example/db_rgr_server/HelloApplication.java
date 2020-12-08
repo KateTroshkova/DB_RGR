@@ -14,7 +14,7 @@ public class HelloApplication extends Application {
         System.out.println("start swagger generation");
         BeanConfig beanConfig = new BeanConfig();
         beanConfig.setVersion("1.0.0");
-        beanConfig.setBasePath("/");
+        beanConfig.setBasePath("/db_rgr_server_war");
         beanConfig.setResourcePackage("com.example.db_rgr_server");
         beanConfig.setScan(true);
         System.out.println("complete swagger generation");
