@@ -68,5 +68,34 @@
         <url-pattern>/delete_good</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>CreateKeyword</servlet-name>
+        <servlet-class>com.example.db_rgr_server.data.network.endpoint.CreateKeywordEndpoint</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CreateKeyword</servlet-name>
+        <url-pattern>/create_keyword</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateKeyword</servlet-name>
+        <servlet-class>com.example.db_rgr_server.data.network.endpoint.UpdateKeywordEndpoint</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdateKeyword</servlet-name>
+        <url-pattern>/update_keyword</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RemoveKeyword</servlet-name>
+        <servlet-class>com.example.db_rgr_server.data.network.endpoint.RemoveKeywordEndpoint</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RemoveKeyword</servlet-name>
+        <url-pattern>/delete_keyword</url-pattern>
+    </servlet-mapping>
 
 </web-app>
