@@ -6,8 +6,8 @@ import com.example.db_rgr_server.data.network.converter.JsonParser;
 import com.example.db_rgr_server.data.network.converter.KeywordConverter;
 import com.example.db_rgr_server.data.network.request.UnknownKeywordRequest;
 import com.example.db_rgr_server.data.network.response.IdResponse;
-import com.example.db_rgr_server.db.DBProtocol;
-import com.example.db_rgr_server.model.Keyword;
+import com.example.db_rgr_server.data.repository.DBProtocol;
+import com.example.db_rgr_server.domain.model.Keyword;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;

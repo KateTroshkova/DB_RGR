@@ -1,4 +1,4 @@
-package com.example.db_rgr_server.data;
+package com.example.db_rgr_server.data.network;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

@@ -1,18 +1,19 @@
-package com.example.db_rgr_server.db;
+package com.example.db_rgr_server.data.database.dao;
 
-import com.example.db_rgr_server.model.Good;
+import com.example.db_rgr_server.data.database.HibernateSessionFactoryUtil;
+import com.example.db_rgr_server.domain.model.Keyword;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
 import java.util.List;
 
-public class GoodDao {
+public class KeywordDao {
 
-    public Good findById(int id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Good.class, id);
+    public Keyword findById(int id) {
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Keyword.class, id);
     }
 
-    public void save(Good user) {
-        System.out.println(user.getId()+" "+user.getName()+" "+user.getPrice());
+    public void save(Keyword user) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         session.save(user);
@@ -20,7 +21,7 @@ public class GoodDao {
         session.close();
     }
 
-    public void update(Good good) {
+    public void update(Keyword good) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         session.update(good);
@@ -28,7 +29,7 @@ public class GoodDao {
         session.close();
     }
 
-    public void delete(Good user) {
+    public void delete(Keyword user) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         session.delete(user);
@@ -36,11 +37,11 @@ public class GoodDao {
         session.close();
     }
 
-    public List<Good> findAll() {
-        List<Good> users = HibernateSessionFactoryUtil
+    public List<Keyword> findAll() {
+        List<Keyword> users = HibernateSessionFactoryUtil
                 .getSessionFactory()
                 .openSession()
-                .createQuery("from Good", Good.class)
+                .createQuery("from Keyword", Keyword.class)
                 .list();
         return users;
     }

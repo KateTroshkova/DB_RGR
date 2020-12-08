@@ -4,8 +4,8 @@ import com.example.db_rgr_server.data.database.converter.GoodDBConverter;
 import com.example.db_rgr_server.data.network.converter.GoodConverter;
 import com.example.db_rgr_server.data.network.converter.JsonParser;
 import com.example.db_rgr_server.data.network.request.GoodRequest;
-import com.example.db_rgr_server.db.DBProtocol;
-import com.example.db_rgr_server.model.Good;
+import com.example.db_rgr_server.data.repository.DBProtocol;
+import com.example.db_rgr_server.domain.model.Good;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

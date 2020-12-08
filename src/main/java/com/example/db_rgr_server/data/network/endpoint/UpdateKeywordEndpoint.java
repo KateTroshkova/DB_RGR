@@ -1,13 +1,11 @@
 package com.example.db_rgr_server.data.network.endpoint;
 
-import com.example.db_rgr_server.data.database.converter.GoodDBConverter;
 import com.example.db_rgr_server.data.database.converter.KeywordDBConverter;
 import com.example.db_rgr_server.data.network.converter.JsonParser;
 import com.example.db_rgr_server.data.network.converter.KeywordConverter;
 import com.example.db_rgr_server.data.network.request.KeywordRequest;
-import com.example.db_rgr_server.db.DBProtocol;
-import com.example.db_rgr_server.model.Good;
-import com.example.db_rgr_server.model.Keyword;
+import com.example.db_rgr_server.data.repository.DBProtocol;
+import com.example.db_rgr_server.domain.model.Keyword;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

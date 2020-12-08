@@ -1,8 +1,8 @@
-package com.example.db_rgr_server.api;
+package com.example.db_rgr_server.domain.swagger;
 
 import com.example.db_rgr_server.data.network.request.*;
 import com.example.db_rgr_server.data.network.response.IdResponse;
-import com.example.db_rgr_server.model.Keyword;
+import com.example.db_rgr_server.domain.model.Keyword;
 import io.swagger.annotations.*;
 
 import javax.ws.rs.DELETE;

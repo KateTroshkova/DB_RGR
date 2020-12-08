@@ -1,11 +1,9 @@
-package com.example.db_rgr_server.api;
+package com.example.db_rgr_server.domain.swagger;
 
-import com.example.db_rgr_server.data.network.request.BondRequest;
 import com.example.db_rgr_server.data.network.request.GoodRequest;
 import com.example.db_rgr_server.data.network.request.UnknownGoodRequest;
 import com.example.db_rgr_server.data.network.response.IdResponse;
-import com.example.db_rgr_server.model.Good;
-import com.example.db_rgr_server.model.Keyword;
+import com.example.db_rgr_server.domain.model.Good;
 import io.swagger.annotations.*;
 
 import javax.ws.rs.DELETE;
@@ -15,7 +13,7 @@ import javax.ws.rs.Path;
 import java.util.List;
 
 @Api(value = "Good")
-public interface SwaggerApi {
+public interface SwaggerGoodApi {
 
     @Path("/create_good")
     @POST

@@ -1,6 +1,6 @@
-package com.example.db_rgr_server.api;
+package com.example.db_rgr_server.domain.repository;
 
-import com.example.db_rgr_server.model.Good;
+import com.example.db_rgr_server.domain.model.Good;
 
 import java.util.List;
 

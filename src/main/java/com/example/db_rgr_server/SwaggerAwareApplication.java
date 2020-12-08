@@ -8,9 +8,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 @ApplicationPath("/")
-public class HelloApplication extends Application {
+public class SwaggerAwareApplication extends Application {
 
-    public HelloApplication(){
+    public SwaggerAwareApplication(){
         System.out.println("start swagger generation");
         BeanConfig beanConfig = new BeanConfig();
         beanConfig.setVersion("1.0.0");

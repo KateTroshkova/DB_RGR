@@ -1,7 +1,6 @@
-package com.example.db_rgr_server.model;
+package com.example.db_rgr_server.domain.model;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.Objects;
 
 @Entity

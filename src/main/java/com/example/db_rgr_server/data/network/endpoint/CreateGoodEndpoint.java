@@ -6,8 +6,8 @@ import com.example.db_rgr_server.data.network.converter.IdConverter;
 import com.example.db_rgr_server.data.network.converter.JsonParser;
 import com.example.db_rgr_server.data.network.request.UnknownGoodRequest;
 import com.example.db_rgr_server.data.network.response.IdResponse;
-import com.example.db_rgr_server.db.DBProtocol;
-import com.example.db_rgr_server.model.Good;
+import com.example.db_rgr_server.data.repository.DBProtocol;
+import com.example.db_rgr_server.domain.model.Good;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;

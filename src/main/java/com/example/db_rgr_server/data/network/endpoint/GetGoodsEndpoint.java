@@ -1,9 +1,8 @@
 package com.example.db_rgr_server.data.network.endpoint;
 
 import com.example.db_rgr_server.data.network.converter.GoodConverter;
-import com.example.db_rgr_server.db.DBProtocol;
-import com.example.db_rgr_server.model.Good;
-import com.example.db_rgr_server.repository.GoodRepository;
+import com.example.db_rgr_server.data.repository.DBProtocol;
+import com.example.db_rgr_server.domain.model.Good;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;

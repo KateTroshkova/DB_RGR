@@ -2,7 +2,7 @@ package com.example.db_rgr_server.data.database.converter;
 
 import com.example.db_rgr_server.data.network.request.KeywordRequest;
 import com.example.db_rgr_server.data.network.request.UnknownKeywordRequest;
-import com.example.db_rgr_server.model.Keyword;
+import com.example.db_rgr_server.domain.model.Keyword;
 
 public class KeywordDBConverter {
 

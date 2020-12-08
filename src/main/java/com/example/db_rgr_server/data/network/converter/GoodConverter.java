@@ -2,7 +2,7 @@ package com.example.db_rgr_server.data.network.converter;
 
 import com.example.db_rgr_server.data.network.request.GoodRequest;
 import com.example.db_rgr_server.data.network.request.UnknownGoodRequest;
-import com.example.db_rgr_server.model.Good;
+import com.example.db_rgr_server.domain.model.Good;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;

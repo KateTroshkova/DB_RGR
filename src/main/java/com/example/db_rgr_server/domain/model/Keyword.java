@@ -1,6 +1,4 @@
-package com.example.db_rgr_server.model;
-
-import com.example.db_rgr_server.data.network.request.KeywordRequest;
+package com.example.db_rgr_server.domain.model;
 
 import javax.persistence.*;
 import java.util.Objects;

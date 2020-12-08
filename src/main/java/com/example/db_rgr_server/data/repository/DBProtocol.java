@@ -1,9 +1,10 @@
-package com.example.db_rgr_server.db;
+package com.example.db_rgr_server.data.repository;
 
-import com.example.db_rgr_server.model.Good;
-import com.example.db_rgr_server.model.Keyword;
+import com.example.db_rgr_server.data.database.dao.GoodDao;
+import com.example.db_rgr_server.data.database.dao.KeywordDao;
+import com.example.db_rgr_server.domain.model.Good;
+import com.example.db_rgr_server.domain.model.Keyword;
 
-import java.sql.*;
 import java.util.List;
 
 public class DBProtocol {

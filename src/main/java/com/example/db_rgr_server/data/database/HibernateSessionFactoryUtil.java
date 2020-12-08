@@ -1,7 +1,7 @@
-package com.example.db_rgr_server.db;
+package com.example.db_rgr_server.data.database;
 
-import com.example.db_rgr_server.model.Good;
-import com.example.db_rgr_server.model.Keyword;
+import com.example.db_rgr_server.domain.model.Good;
+import com.example.db_rgr_server.domain.model.Keyword;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
