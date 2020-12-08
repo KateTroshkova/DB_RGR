@@ -38,7 +38,11 @@ public class KeywordDao {
     }
 
     public List<Keyword> findAll() {
-        List<Keyword> users = (List<Keyword>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From keywords").list();
+        List<Keyword> users = HibernateSessionFactoryUtil
+                .getSessionFactory()
+                .openSession()
+                .createQuery("from Keyword", Keyword.class)
+                .list();
         return users;
     }
 }

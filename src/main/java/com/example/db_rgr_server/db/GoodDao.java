@@ -37,7 +37,11 @@ public class GoodDao {
     }
 
     public List<Good> findAll() {
-        List<Good> users = (List<Good>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From goods").list();
+        List<Good> users = HibernateSessionFactoryUtil
+                .getSessionFactory()
+                .openSession()
+                .createQuery("from Good", Good.class)
+                .list();
         return users;
     }
 }

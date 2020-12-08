@@ -4,6 +4,7 @@ import com.example.db_rgr_server.model.Good;
 import com.example.db_rgr_server.model.Keyword;
 
 import java.sql.*;
+import java.util.List;
 
 public class DBProtocol {
 
@@ -24,6 +25,10 @@ public class DBProtocol {
         return good.getId();
     }
 
+    public List<Good> loadAllGoods(){
+        return usersDao.findAll();
+    }
+
     public void saveKeyword(Keyword keyword){
         keywordsDao.save(keyword);
     }
@@ -36,5 +41,9 @@ public class DBProtocol {
         Keyword good = keywordsDao.findById(id);
         keywordsDao.delete(good);
         return good.getId();
+    }
+
+    public List<Keyword> loadAllkeywords(){
+        return keywordsDao.findAll();
     }
 }

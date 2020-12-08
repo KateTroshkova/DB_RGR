@@ -2,11 +2,14 @@ package com.example.db_rgr_server.api;
 
 import com.example.db_rgr_server.data.network.request.*;
 import com.example.db_rgr_server.data.network.response.IdResponse;
+import com.example.db_rgr_server.model.Keyword;
 import io.swagger.annotations.*;
 
 import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import java.util.List;
 
 @Api(value = "Keyword")
 public interface SwaggerKeywordApi {
@@ -48,4 +51,13 @@ public interface SwaggerKeywordApi {
             @ApiResponse(code = 500, message = "Error -> Not implemented yet")
     })
     void addKeyword(@ApiParam("bond") BondRequest bond);
+
+    @Path("/get_all_keywords")
+    @GET
+    @ApiOperation(httpMethod = "GET", value = "Добавить существующее ключевое слово существующему сувениру")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "OK -> Ключевое слово добавлено"),
+            @ApiResponse(code = 500, message = "Error -> Not implemented yet")
+    })
+    List<Keyword> loadAll();
 }
