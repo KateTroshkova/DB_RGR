@@ -15,18 +15,18 @@ public class Good {
     @Column(name = "good_name")
     private String name;
     @Column(name = "price")
-    private int price;
+    private float price;
 
     public Good(){
 
     }
 
-    public Good(long id, String name, int price, HashSet<String> keywords) {
+    public Good(String name, float price) {
         this.name = name;
         this.price = price;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
@@ -38,11 +38,11 @@ public class Good {
         this.name = name;
     }
 
-    public int getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
@@ -59,7 +59,7 @@ public class Good {
         int hash = 3;
         hash = 97 * hash + Objects.hashCode(this.id);
         hash = 97 * hash + Objects.hashCode(this.name);
-        hash = 97 * hash + this.price;
+        hash = 97 * hash + Objects.hashCode(this.price);
         return hash;
     }
 }

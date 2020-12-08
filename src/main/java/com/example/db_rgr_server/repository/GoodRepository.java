@@ -13,9 +13,9 @@ public class GoodRepository implements GoodsApi {
         List<Good> goods = new ArrayList<>();
         HashSet<String> keywords = new HashSet<String>();
         keywords.add("Россия");
-        goods.add(new Good(1L, "Matreshka", 42, keywords));
-        goods.add(new Good(2L, "Veer", 43, keywords));
-        goods.add(new Good(3L, "Magnit", 44, keywords));
+        goods.add(new Good("Matreshka", 42));
+        goods.add(new Good("Veer", 43));
+        goods.add(new Good("Magnit", 44));
         return goods;
     }
 

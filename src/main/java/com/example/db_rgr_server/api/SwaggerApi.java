@@ -1,8 +1,9 @@
 package com.example.db_rgr_server.api;
 
 import com.example.db_rgr_server.data.network.request.BondRequest;
+import com.example.db_rgr_server.data.network.request.UnknownGoodRequest;
+import com.example.db_rgr_server.data.network.response.IdResponse;
 import com.example.db_rgr_server.model.Good;
-import com.example.db_rgr_server.repository.GoodRepository;
 import io.swagger.annotations.*;
 
 import javax.ws.rs.GET;
@@ -22,16 +23,14 @@ public interface SwaggerApi {
     })
     public List<Good> loadAll();
 
-    @Path("/add_good")
+    @Path("/create_good")
     @GET
-    @ApiOperation(httpMethod = "POST", value = "Resource to get a list of goods")
+    @ApiOperation(httpMethod = "POST", value = "Добавить новый сувенир")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "OK -> The user has been fetched successfully"),
-            @ApiResponse(code = 201, message = "OK -> The user has been created successfully"),
-            @ApiResponse(code = 202, message = "Accepted -> The user has been updated successfully"),
-            @ApiResponse(code = 204, message = "NO CONTENT -> The user has been removed successfully")
+            @ApiResponse(code = 200, message = "OK -> Ключевое слово добавлено"),
+            @ApiResponse(code = 500, message = "Error -> Not implemented yet")
     })
-    public void save(@ApiParam("good") Good good);
+    IdResponse save(@ApiParam("good") UnknownGoodRequest good);
 
     @Path("/add_keyword")
     @GET
