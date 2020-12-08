@@ -16,6 +16,14 @@ public class GoodDao {
         session.close();
     }
 
+    public void update(Good good) {
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Transaction tx1 = session.beginTransaction();
+        session.update(good);
+        tx1.commit();
+        session.close();
+    }
+
     public List<Good> findAll() {
         List<Good> users = (List<Good>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From goods").list();
         return users;

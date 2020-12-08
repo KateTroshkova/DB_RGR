@@ -24,16 +24,6 @@
         <url-pattern>/get_goods</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>UpdateGood</servlet-name>
-        <servlet-class>com.example.db_rgr_server.servlet.UpdateGood</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>UpdateGood</servlet-name>
-        <url-pattern>/update_good</url-pattern>
-    </servlet-mapping>
-
     <filter>
         <filter-name>CorsFilter</filter-name>
         <filter-class>com.example.db_rgr_server.data.Filter</filter-class>
@@ -62,6 +52,16 @@
         <servlet-name>CreateGood</servlet-name>
         <servlet-class>com.example.db_rgr_server.data.network.endpoint.CreateGoodEndpoint</servlet-class>
     </servlet>
+
+    <servlet>
+        <servlet-name>UpdateGood</servlet-name>
+        <servlet-class>com.example.db_rgr_server.data.network.endpoint.UpdateGoodEndpoint</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdateGood</servlet-name>
+        <url-pattern>/update_good</url-pattern>
+    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>CreateGood</servlet-name>

@@ -26,6 +26,12 @@ public class Good {
         this.price = price;
     }
 
+    public Good(int id, String name, float price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
+
     public int getId() {
         return id;
     }
