@@ -46,7 +46,7 @@
 
     <filter>
         <filter-name>CorsFilter</filter-name>
-        <filter-class>com.example.db_rgr_server.Filter</filter-class>
+        <filter-class>com.example.db_rgr_server.data.Filter</filter-class>
     </filter>
 
     <filter-mapping>
@@ -57,4 +57,14 @@
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>
+
+    <servlet>
+        <servlet-name>AddKeyword</servlet-name>
+        <servlet-class>com.example.db_rgr_server.data.network.endpoint.AddKeywordEndpoint</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddKeyword</servlet-name>
+        <url-pattern>/add_keyword</url-pattern>
+    </servlet-mapping>
 </web-app>

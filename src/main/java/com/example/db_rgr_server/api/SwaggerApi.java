@@ -1,5 +1,6 @@
 package com.example.db_rgr_server.api;
 
+import com.example.db_rgr_server.data.network.request.BondRequest;
 import com.example.db_rgr_server.model.Good;
 import com.example.db_rgr_server.repository.GoodRepository;
 import io.swagger.annotations.*;
@@ -31,4 +32,13 @@ public interface SwaggerApi {
             @ApiResponse(code = 204, message = "NO CONTENT -> The user has been removed successfully")
     })
     public void save(@ApiParam("good") Good good);
+
+    @Path("/add_keyword")
+    @GET
+    @ApiOperation(httpMethod = "POST", value = "Добавить существующее ключевое слово существующему сувениру")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "OK -> Ключевое слово добавлено"),
+            @ApiResponse(code = 500, message = "Error -> Not implemented yet")
+    })
+    void addKeyword(@ApiParam("bond") BondRequest bond);
 }
