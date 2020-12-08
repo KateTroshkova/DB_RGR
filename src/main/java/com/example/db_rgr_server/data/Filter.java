@@ -10,7 +10,7 @@ public class Filter implements javax.servlet.Filter {
 
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         ((HttpServletResponse) response).setHeader("Access-Control-Allow-Origin", "*");
-        ((HttpServletResponse) response).setHeader("Access-Control-Allow-Methods", "GET, OPTIONS, HEAD, PUT, POST");
+        ((HttpServletResponse) response).setHeader("Access-Control-Allow-Methods", "GET, OPTIONS, HEAD, PUT, POST, DELETE");
         ((HttpServletResponse) response).setHeader("Access-Control-Allow-Headers", "Content-Type");
         ((HttpServletResponse) response).setHeader("Access-Control-Max-Age", "86400");
         // pass the request along the filter chain

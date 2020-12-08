@@ -15,4 +15,10 @@ public class DBProtocol {
     public void updateGood(Good good){
         usersDao.update(good);
     }
+
+    public int deleteGood(int id){
+        Good good = usersDao.findById(id);
+        usersDao.delete(good);
+        return good.getId();
+    }
 }

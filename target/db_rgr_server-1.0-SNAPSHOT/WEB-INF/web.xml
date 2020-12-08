@@ -5,16 +5,6 @@
          version="4.0">
 
     <servlet>
-        <servlet-name>MyServlet</servlet-name>
-        <servlet-class>com.example.db_rgr_server.HelloServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>MyServlet</servlet-name>
-        <url-pattern>/MyServlet</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
         <servlet-name>GetGoods</servlet-name>
         <servlet-class>com.example.db_rgr_server.servlet.GetGoods</servlet-class>
     </servlet>
@@ -53,6 +43,11 @@
         <servlet-class>com.example.db_rgr_server.data.network.endpoint.CreateGoodEndpoint</servlet-class>
     </servlet>
 
+    <servlet-mapping>
+        <servlet-name>CreateGood</servlet-name>
+        <url-pattern>/create_good</url-pattern>
+    </servlet-mapping>
+
     <servlet>
         <servlet-name>UpdateGood</servlet-name>
         <servlet-class>com.example.db_rgr_server.data.network.endpoint.UpdateGoodEndpoint</servlet-class>
@@ -63,8 +58,15 @@
         <url-pattern>/update_good</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>RemoveGood</servlet-name>
+        <servlet-class>com.example.db_rgr_server.data.network.endpoint.RemoveGoodEndpoint</servlet-class>
+    </servlet>
+
     <servlet-mapping>
-        <servlet-name>CreateGood</servlet-name>
-        <url-pattern>/create_good</url-pattern>
+        <servlet-name>RemoveGood</servlet-name>
+        <url-pattern>/delete_good</url-pattern>
     </servlet-mapping>
+
+
 </web-app>

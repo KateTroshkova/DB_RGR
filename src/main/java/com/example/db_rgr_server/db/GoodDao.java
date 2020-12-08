@@ -7,6 +7,10 @@ import java.util.List;
 
 public class GoodDao {
 
+    public Good findById(int id) {
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Good.class, id);
+    }
+
     public void save(Good user) {
         System.out.println(user.getId()+" "+user.getName()+" "+user.getPrice());
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
@@ -20,6 +24,14 @@ public class GoodDao {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         session.update(good);
+        tx1.commit();
+        session.close();
+    }
+
+    public void delete(Good user) {
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Transaction tx1 = session.beginTransaction();
+        session.delete(user);
         tx1.commit();
         session.close();
     }
