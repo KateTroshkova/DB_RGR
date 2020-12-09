@@ -47,4 +47,8 @@ public class DBProtocol {
     public List<Keyword> loadAllkeywords(){
         return keywordsDao.findAll();
     }
+
+    public Keyword loadBuId(int id){
+        return keywordsDao.findById(id);
+    }
 }

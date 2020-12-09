@@ -2,6 +2,7 @@ package com.example.db_rgr_server.data.network.converter;
 
 import com.example.db_rgr_server.data.network.request.GoodRequest;
 import com.example.db_rgr_server.data.network.request.UnknownGoodRequest;
+import com.example.db_rgr_server.data.network.response.GoodResponse;
 import com.example.db_rgr_server.domain.model.Good;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -26,7 +27,7 @@ public class GoodConverter {
         return gson.fromJson(source, GoodRequest.class);
     }
 
-    public String convertToJson(List<Good> cities) {
+    public String convertToJson(List<GoodResponse> cities) {
         JsonArray jarray = gson.toJsonTree(cities).getAsJsonArray();
         JsonObject jsonObject = new JsonObject();
         jsonObject.add("goods", jarray);

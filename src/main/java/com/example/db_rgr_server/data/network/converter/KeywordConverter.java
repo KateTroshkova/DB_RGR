@@ -2,6 +2,7 @@ package com.example.db_rgr_server.data.network.converter;
 
 import com.example.db_rgr_server.data.network.request.KeywordRequest;
 import com.example.db_rgr_server.data.network.request.UnknownKeywordRequest;
+import com.example.db_rgr_server.data.network.response.KeywordResponse;
 import com.example.db_rgr_server.domain.model.Keyword;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -26,7 +27,7 @@ public class KeywordConverter {
         return gson.fromJson(source, KeywordRequest.class);
     }
 
-    public String convertToJson(List<Keyword> cities) {
+    public String convertToJson(List<KeywordResponse> cities) {
         JsonArray jarray = gson.toJsonTree(cities).getAsJsonArray();
         JsonObject jsonObject = new JsonObject();
         jsonObject.add("keywords", jarray);

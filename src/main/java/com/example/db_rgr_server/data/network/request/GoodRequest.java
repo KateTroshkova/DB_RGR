@@ -6,8 +6,9 @@ public class GoodRequest {
     private int id;
     private String name;
     private float price;
+    private int[] keywords;
 
-    public GoodRequest(int id, String name, float price) {
+    public GoodRequest(int id, String name, float price, int[] keywords) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -35,6 +36,14 @@ public class GoodRequest {
 
     public void setPrice(float price) {
         this.price = price;
+    }
+
+    public int[] getKeywords() {
+        return keywords;
+    }
+
+    public void setKeywords(int[] keywords) {
+        this.keywords = keywords;
     }
 
     @Override

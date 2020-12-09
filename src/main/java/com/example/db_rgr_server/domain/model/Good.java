@@ -1,7 +1,9 @@
 package com.example.db_rgr_server.domain.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name="goods")
@@ -9,12 +11,20 @@ public class Good {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false, nullable = false)
+    @Column(name = "good_id", updatable = false, nullable = false)
     private int id;
     @Column(name = "good_name")
     private String name;
     @Column(name = "price")
     private float price;
+
+    @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "bond",
+            joinColumns = { @JoinColumn(name = "good_id") },
+            inverseJoinColumns = { @JoinColumn(name = "keyword_id") }
+    )
+    Set<Keyword> keywords = new HashSet<>();
 
     public Good(){
 
@@ -30,6 +40,12 @@ public class Good {
         this.name = name;
         this.price = price;
     }
+
+    public void addKeyword(Keyword keyword){
+        keywords.add(keyword);
+    }
+
+    public Set<Keyword> getKeywords(){return keywords;}
 
     public int getId() {
         return id;

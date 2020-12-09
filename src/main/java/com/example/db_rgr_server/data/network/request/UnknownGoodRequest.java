@@ -6,8 +6,9 @@ public class UnknownGoodRequest {
 
     private String name;
     private float price;
+    private int[] keywords;
 
-    public UnknownGoodRequest(String name, float price) {
+    public UnknownGoodRequest(String name, float price, int[] keywords) {
         this.name = name;
         this.price = price;
     }
@@ -27,6 +28,15 @@ public class UnknownGoodRequest {
     public void setPrice(float price) {
         this.price = price;
     }
+
+    public int[] getKeywords() {
+        return keywords;
+    }
+
+    public void setKeywords(int[] keywords) {
+        this.keywords = keywords;
+    }
+
 
     @Override
     public boolean equals(Object o) {

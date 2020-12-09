@@ -6,6 +6,7 @@ import com.example.db_rgr_server.data.network.converter.JsonParser;
 import com.example.db_rgr_server.data.network.request.GoodRequest;
 import com.example.db_rgr_server.data.repository.DBProtocol;
 import com.example.db_rgr_server.domain.model.Good;
+import com.example.db_rgr_server.domain.model.Keyword;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashSet;
+import java.util.Set;
 
 public class UpdateGoodEndpoint extends HttpServlet {
 
@@ -25,6 +28,10 @@ public class UpdateGoodEndpoint extends HttpServlet {
         Good good = new GoodDBConverter().fromNetwork(goodRequest);
 
         DBProtocol db = new DBProtocol();
+        for (int keywordId:goodRequest.getKeywords()){
+            Keyword keyword = db.loadBuId(keywordId);
+            good.addKeyword(keyword);
+        }
         db.updateGood(good);
         System.out.println("Update good with id " + good.getId());
 

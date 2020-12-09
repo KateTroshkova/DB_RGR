@@ -8,6 +8,7 @@ import com.example.db_rgr_server.data.network.request.UnknownGoodRequest;
 import com.example.db_rgr_server.data.network.response.IdResponse;
 import com.example.db_rgr_server.data.repository.DBProtocol;
 import com.example.db_rgr_server.domain.model.Good;
+import com.example.db_rgr_server.domain.model.Keyword;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -27,6 +28,10 @@ public class CreateGoodEndpoint extends HttpServlet {
         Good good = new GoodDBConverter().fromNetwork(goodRequest);
 
         DBProtocol db = new DBProtocol();
+        for (int keywordId:goodRequest.getKeywords()){
+            Keyword keyword = db.loadBuId(keywordId);
+            good.addKeyword(keyword);
+        }
         db.saveGood(good);
         System.out.println("Save good with id " + good.getId());
 
