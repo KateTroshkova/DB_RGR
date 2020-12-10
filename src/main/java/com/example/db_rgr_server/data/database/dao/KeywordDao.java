@@ -38,6 +38,10 @@ public class KeywordDao {
     public void delete(Keyword user) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
+        for(Good good: user.getGoods()){
+            good.removeKeyword(user);
+            session.update(good);
+        }
         session.delete(user);
         tx1.commit();
         session.close();

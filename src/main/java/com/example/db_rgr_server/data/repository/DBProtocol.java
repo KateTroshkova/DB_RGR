@@ -39,9 +39,9 @@ public class DBProtocol {
     }
 
     public int deleteKeyword(int id){
-        Keyword good = keywordsDao.findById(id);
-        keywordsDao.delete(good);
-        return good.getId();
+        Keyword keyword = keywordsDao.findById(id);
+        keywordsDao.delete(keyword);
+        return keyword.getId();
     }
 
     public List<Keyword> loadAllkeywords(){

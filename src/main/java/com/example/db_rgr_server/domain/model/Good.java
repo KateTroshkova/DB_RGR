@@ -1,6 +1,7 @@
 package com.example.db_rgr_server.domain.model;
 
 import javax.persistence.*;
+import java.security.Key;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -18,7 +19,10 @@ public class Good {
     @Column(name = "price")
     private float price;
 
-    @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+    @ManyToMany(
+            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH},
+            fetch = FetchType.EAGER
+    )
     @JoinTable(
             name = "bond",
             joinColumns = { @JoinColumn(name = "good_id") },
@@ -44,6 +48,8 @@ public class Good {
     public void addKeyword(Keyword keyword){
         keywords.add(keyword);
     }
+
+    public void removeKeyword(Keyword keyword){keywords.remove(keyword);}
 
     public Set<Keyword> getKeywords(){return keywords;}
 

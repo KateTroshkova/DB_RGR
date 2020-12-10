@@ -18,11 +18,9 @@ public class Keyword {
     @Column(name = "value")
     private String value;
 
-    @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "bond",
-            joinColumns = { @JoinColumn(name = "keyword_id") },
-            inverseJoinColumns = { @JoinColumn(name = "good_id") }
+    @ManyToMany(
+            mappedBy = "keywords",
+            fetch = FetchType.EAGER
     )
     Set<Good> goods = new HashSet<>();
 
@@ -63,6 +61,18 @@ public class Keyword {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public Set<Good> getGoods() {
+        return goods;
+    }
+
+    public void setGoods(Set<Good> goods) {
+        this.goods = goods;
+    }
+
+    public void removeGood(Good good){
+        goods.remove(good);
     }
 
     @Override
