@@ -6,7 +6,7 @@
 
     <filter>
         <filter-name>CorsFilter</filter-name>
-        <filter-class>com.example.db_rgr_server.data.network.Filter</filter-class>
+        <filter-class>com.example.db_rgr_server.network.Filter</filter-class>
     </filter>
 
     <filter-mapping>
@@ -19,18 +19,8 @@
     </session-config>
 
     <servlet>
-        <servlet-name>AddKeyword</servlet-name>
-        <servlet-class>com.example.db_rgr_server.data.network.endpoint.AddKeywordEndpoint</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>AddKeyword</servlet-name>
-        <url-pattern>/add_keyword</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
         <servlet-name>CreateGood</servlet-name>
-        <servlet-class>com.example.db_rgr_server.data.network.endpoint.CreateGoodEndpoint</servlet-class>
+        <servlet-class>com.example.db_rgr_server.network.endpoint.CreateGoodEndpoint</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -40,7 +30,7 @@
 
     <servlet>
         <servlet-name>UpdateGood</servlet-name>
-        <servlet-class>com.example.db_rgr_server.data.network.endpoint.UpdateGoodEndpoint</servlet-class>
+        <servlet-class>com.example.db_rgr_server.network.endpoint.UpdateGoodEndpoint</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -50,7 +40,7 @@
 
     <servlet>
         <servlet-name>RemoveGood</servlet-name>
-        <servlet-class>com.example.db_rgr_server.data.network.endpoint.RemoveGoodEndpoint</servlet-class>
+        <servlet-class>com.example.db_rgr_server.network.endpoint.RemoveGoodEndpoint</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -60,7 +50,7 @@
 
     <servlet>
         <servlet-name>CreateKeyword</servlet-name>
-        <servlet-class>com.example.db_rgr_server.data.network.endpoint.CreateKeywordEndpoint</servlet-class>
+        <servlet-class>com.example.db_rgr_server.network.endpoint.CreateKeywordEndpoint</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -70,7 +60,7 @@
 
     <servlet>
         <servlet-name>UpdateKeyword</servlet-name>
-        <servlet-class>com.example.db_rgr_server.data.network.endpoint.UpdateKeywordEndpoint</servlet-class>
+        <servlet-class>com.example.db_rgr_server.network.endpoint.UpdateKeywordEndpoint</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -80,7 +70,7 @@
 
     <servlet>
         <servlet-name>RemoveKeyword</servlet-name>
-        <servlet-class>com.example.db_rgr_server.data.network.endpoint.RemoveKeywordEndpoint</servlet-class>
+        <servlet-class>com.example.db_rgr_server.network.endpoint.RemoveKeywordEndpoint</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -90,7 +80,7 @@
 
     <servlet>
         <servlet-name>GetAllGoods</servlet-name>
-        <servlet-class>com.example.db_rgr_server.data.network.endpoint.GetGoodsEndpoint</servlet-class>
+        <servlet-class>com.example.db_rgr_server.network.endpoint.GetGoodsEndpoint</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -100,7 +90,7 @@
 
     <servlet>
         <servlet-name>GetAllKeywords</servlet-name>
-        <servlet-class>com.example.db_rgr_server.data.network.endpoint.GetKeywordsEndpoint</servlet-class>
+        <servlet-class>com.example.db_rgr_server.network.endpoint.GetKeywordsEndpoint</servlet-class>
     </servlet>
 
     <servlet-mapping>
