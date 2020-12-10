@@ -19,11 +19,11 @@ public class CreateKeywordEndpoint extends BaseEndpoint {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String json = JsonParser.getInstance().parseRequest(request);
-        UnknownKeywordRequest goodRequest = new KeywordConverter().convertUnknownKeywordFromJson(json);
-        Keyword good = new KeywordDBConverter().fromNetwork(goodRequest);
-        Repository.getInstance().createKeyword(good);
+        UnknownKeywordRequest keywordRequest = new KeywordConverter().convertUnknownKeywordFromJson(json);
+        Keyword keyword = new KeywordDBConverter().fromNetwork(keywordRequest);
+        Repository.getInstance().createKeyword(keyword);
         IdConverter converter = new IdConverter();
-        String output = converter.convertToJson(new IdResponse(good.getId()));
+        String output = converter.convertToJson(new IdResponse(keyword.getId()));
         sendResponse(response, output);
     }
 }

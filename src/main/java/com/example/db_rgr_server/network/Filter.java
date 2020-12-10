@@ -13,7 +13,6 @@ public class Filter implements javax.servlet.Filter {
         ((HttpServletResponse) response).setHeader("Access-Control-Allow-Methods", "GET, OPTIONS, HEAD, PUT, POST, DELETE");
         ((HttpServletResponse) response).setHeader("Access-Control-Allow-Headers", "Content-Type");
         ((HttpServletResponse) response).setHeader("Access-Control-Max-Age", "86400");
-        // pass the request along the filter chain
         chain.doFilter(request, response);
     }
 

@@ -19,30 +19,30 @@ public class KeywordDao {
         return keyword;
     }
 
-    public void save(Keyword user) {
+    public void save(Keyword keyword) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.save(user);
+        session.save(keyword);
         tx1.commit();
         session.close();
     }
 
-    public void update(Keyword good) {
+    public void update(Keyword keyword) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.update(good);
+        session.update(keyword);
         tx1.commit();
         session.close();
     }
 
-    public void delete(Keyword user) {
+    public void delete(Keyword keyword) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        for(Good good: user.getGoods()){
-            good.removeKeyword(user);
+        for(Good good: keyword.getGoods()){
+            good.removeKeyword(keyword);
             session.update(good);
         }
-        session.delete(user);
+        session.delete(keyword);
         tx1.commit();
         session.close();
     }
@@ -50,9 +50,9 @@ public class KeywordDao {
     public List<Keyword> findAll() {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        List<Keyword> goods = session.createQuery("from Keyword", Keyword.class).list();
+        List<Keyword> keywords = session.createQuery("from Keyword", Keyword.class).list();
         tx1.commit();
         session.close();
-        return goods;
+        return keywords;
     }
 }

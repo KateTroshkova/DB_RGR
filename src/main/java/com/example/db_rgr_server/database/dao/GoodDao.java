@@ -17,11 +17,10 @@ public class GoodDao {
         return good;
     }
 
-    public void save(Good user) {
-        System.out.println(user.getId()+" "+user.getName()+" "+user.getPrice());
+    public void save(Good good) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.save(user);
+        session.save(good);
         tx1.commit();
         session.close();
     }
@@ -34,10 +33,10 @@ public class GoodDao {
         session.close();
     }
 
-    public void delete(Good user) {
+    public void delete(Good good) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.delete(user);
+        session.delete(good);
         tx1.commit();
         session.close();
     }

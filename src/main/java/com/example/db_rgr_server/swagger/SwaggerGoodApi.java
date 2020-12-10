@@ -20,7 +20,7 @@ public interface SwaggerGoodApi {
     @ApiOperation(httpMethod = "POST", value = "Добавить новый сувенир")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK -> Ключевое слово добавлено"),
-            @ApiResponse(code = 500, message = "Error -> Not implemented yet")
+            @ApiResponse(code = 500, message = "Error -> See logs")
     })
     IdResponse save(@ApiParam("good") UnknownGoodRequest good);
 
@@ -28,8 +28,8 @@ public interface SwaggerGoodApi {
     @POST
     @ApiOperation(httpMethod = "POST", value = "Обновить сувенир")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "OK -> Ключевое слово добавлено"),
-            @ApiResponse(code = 500, message = "Error -> Not implemented yet")
+            @ApiResponse(code = 200, message = "OK -> Сувенир обновлен"),
+            @ApiResponse(code = 500, message = "Error -> See logs")
     })
     void update(@ApiParam("good") GoodRequest good);
 
@@ -38,17 +38,17 @@ public interface SwaggerGoodApi {
     @ApiOperation(httpMethod = "DELETE", value = "Удалить сувенир")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK -> Сувенир удален"),
-            @ApiResponse(code = 500, message = "Error -> Not implemented yet")
+            @ApiResponse(code = 500, message = "Error -> See logs")
     })
     @ApiImplicitParams(@ApiImplicitParam(name = "id", value = "good id", required = true, dataType = "integer", paramType = "query"))
     IdResponse delete();
 
     @Path("/get_all_goods")
     @GET
-    @ApiOperation(httpMethod = "GET", value = "Добавить существующее ключевое слово существующему сувениру")
+    @ApiOperation(httpMethod = "GET", value = "Список всех сувениров")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "OK -> Ключевое слово добавлено"),
-            @ApiResponse(code = 500, message = "Error -> Not implemented yet")
+            @ApiResponse(code = 200, message = "OK"),
+            @ApiResponse(code = 500, message = "Error -> See logs")
     })
     List<Good> loadAll();
 }

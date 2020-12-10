@@ -19,35 +19,35 @@ public interface SwaggerKeywordApi {
     @ApiOperation(httpMethod = "POST", value = "Добавить новый сувенир")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK -> Ключевое слово добавлено"),
-            @ApiResponse(code = 500, message = "Error -> Not implemented yet")
+            @ApiResponse(code = 500, message = "Error -> See logs")
     })
-    IdResponse save(@ApiParam("keyword") UnknownKeywordRequest good);
+    IdResponse save(@ApiParam("keyword") UnknownKeywordRequest keyword);
 
     @Path("/update_keyword")
     @POST
-    @ApiOperation(httpMethod = "POST", value = "Обновить сувенир")
+    @ApiOperation(httpMethod = "POST", value = "Обновить ключевое слово")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "OK -> Ключевое слово добавлено"),
-            @ApiResponse(code = 500, message = "Error -> Not implemented yet")
+            @ApiResponse(code = 200, message = "OK -> Ключевое слово обновлено"),
+            @ApiResponse(code = 500, message = "Error -> See logs")
     })
-    void update(@ApiParam("keyword") KeywordRequest good);
+    void update(@ApiParam("keyword") KeywordRequest keyword);
 
     @Path("/delete_keyword")
     @DELETE
-    @ApiOperation(httpMethod = "DELETE", value = "Удалить сувенир")
+    @ApiOperation(httpMethod = "DELETE", value = "Удалить ключевое слово")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "OK -> Сувенир удален"),
-            @ApiResponse(code = 500, message = "Error -> Not implemented yet")
+            @ApiResponse(code = 200, message = "OK -> Ключевое слово удалено"),
+            @ApiResponse(code = 500, message = "Error -> See logs")
     })
-    @ApiImplicitParams(@ApiImplicitParam(name = "id", value = "good id", required = true, dataType = "integer", paramType = "query"))
+    @ApiImplicitParams(@ApiImplicitParam(name = "id", value = "keyword id", required = true, dataType = "integer", paramType = "query"))
     IdResponse delete();
 
     @Path("/get_all_keywords")
     @GET
-    @ApiOperation(httpMethod = "GET", value = "Добавить существующее ключевое слово существующему сувениру")
+    @ApiOperation(httpMethod = "GET", value = "Список ключевых слов")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "OK -> Ключевое слово добавлено"),
-            @ApiResponse(code = 500, message = "Error -> Not implemented yet")
+            @ApiResponse(code = 200, message = "OK"),
+            @ApiResponse(code = 500, message = "Error -> See logs")
     })
     List<Keyword> loadAll();
 }

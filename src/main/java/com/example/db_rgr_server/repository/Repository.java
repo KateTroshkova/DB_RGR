@@ -21,7 +21,7 @@ public class Repository {
 
     public void createGood(Good good, int[] keywordIds){
         for (int keywordId:keywordIds){
-            Keyword keyword = db.loadBuId(keywordId);
+            Keyword keyword = db.loadById(keywordId);
             good.addKeyword(keyword);
         }
         db.saveGood(good);
@@ -36,7 +36,7 @@ public class Repository {
     }
 
     public List<Keyword> getKeywords(){
-        return db.loadAllkeywords();
+        return db.loadAllKeywords();
     }
 
     public void removeGood(int id){
@@ -49,7 +49,7 @@ public class Repository {
 
     public void updateGood(Good good, int[] keywordIds){
         for (int keywordId:keywordIds){
-            Keyword keyword = db.loadBuId(keywordId);
+            Keyword keyword = db.loadById(keywordId);
             good.addKeyword(keyword);
         }
         db.updateGood(good);

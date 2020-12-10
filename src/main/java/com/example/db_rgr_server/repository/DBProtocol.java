@@ -44,11 +44,11 @@ public class DBProtocol {
         return keyword.getId();
     }
 
-    public List<Keyword> loadAllkeywords(){
+    public List<Keyword> loadAllKeywords(){
         return keywordsDao.findAll();
     }
 
-    public Keyword loadBuId(int id){
+    public Keyword loadById(int id){
         return keywordsDao.findById(id);
     }
 }

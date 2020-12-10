@@ -17,8 +17,8 @@ public class UpdateKeywordEndpoint extends BaseEndpoint {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String json = JsonParser.getInstance().parseRequest(request);
-        KeywordRequest goodRequest = new KeywordConverter().convertKeywordFromJson(json);
-        Keyword keyword = new KeywordDBConverter().fromNetwork(goodRequest);
+        KeywordRequest keywordRequest = new KeywordConverter().convertKeywordFromJson(json);
+        Keyword keyword = new KeywordDBConverter().fromNetwork(keywordRequest);
         Repository.getInstance().updateKeyword(keyword);
         sendEmptyResponse(response);
     }
