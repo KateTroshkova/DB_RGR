@@ -108,4 +108,14 @@
         <url-pattern>/get_all_keywords</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>Welcome</servlet-name>
+        <servlet-class>com.example.db_rgr_server.WelcomeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Welcome</servlet-name>
+        <url-pattern></url-pattern>
+    </servlet-mapping>
+
 </web-app>
